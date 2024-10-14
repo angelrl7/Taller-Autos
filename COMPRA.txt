@@ -1,4 +1,0 @@
-----FACTURA DE COMPRA----
-----Auto a vender: Mustang
-Se recibió el pago de 65792.00 en pesos
-Nombre del vendedor: Matias
