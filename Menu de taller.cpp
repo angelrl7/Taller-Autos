@@ -1,14 +1,39 @@
-#include <stdio.h>
+include <stdio.h>
 
 #define MAX_AUTOS 5
+#define MAX_CLIENTES 2
 
 struct venta {
     char autos[MAX_AUTOS][20]; 
     int precio[MAX_AUTOS];
 };
 
+struct cliente {
+    char nombre[20];
+    int dni;
+    float precio;
+    char detalle[60];
+};
+
+void cargarClientes(struct cliente clientes[]) {
+    for (int i = 0; i < MAX_CLIENTES; i++) {
+        printf("Ingrese el nombre del cliente: ");
+        scanf("%s", clientes[i].nombre);
+        
+        printf("Ingrese el DNI del cliente: ");
+        scanf("%d", &clientes[i].dni);
+        
+        printf("Ingrese el precio del trabajo a realizar: ");
+        scanf("%f", &clientes[i].precio);    
+    
+        printf("Ingrese el detalle del arreglo: ");
+        scanf("%s", clientes[i].detalle);
+    }
+}
+
 int main() {
     struct venta ventas;
+    struct cliente clientes[MAX_CLIENTES];
     int op;
 
     printf("---MENU PRINCIPAL---\n");
@@ -21,7 +46,7 @@ int main() {
 
     switch (op) {
         case 1:
-            // Código para cargar cliente
+            cargarClientes(clientes); 
             break;
         case 2:
             // Código para buscar clientes
